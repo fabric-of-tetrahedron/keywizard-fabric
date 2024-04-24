@@ -1,7 +1,7 @@
 package committee.nova.mkw.gui;
 
-import committee.nova.mkb.api.IKeyBinding;
-import committee.nova.mkb.keybinding.KeyModifier;
+//import committee.nova.mkb.api.IKeyBinding;
+//import committee.nova.mkb.keybinding.KeyModifier;
 import committee.nova.mkw.ModernKeyWizard;
 import committee.nova.mkw.util.KeyBindingUtil;
 import net.minecraft.client.MinecraftClient;
@@ -91,20 +91,20 @@ public class KeyWizardScreen extends GameOptionsScreen {
         this.resetBinding = ButtonWidget.builder(Text.translatable("controls.reset"), b -> {
             KeyBinding selectedBinding = this.getSelectedKeyBinding();
             if (selectedBinding == null) return;
-            ((IKeyBinding) selectedBinding).setToDefault();
+//            ((IKeyBinding) selectedBinding).setToDefault();
             KeyBinding.updateKeysByCode();
         }).dimensions(bindingListWidth + 15, this.height - 23, 50, 20).build();
         this.clearBinding = ButtonWidget.builder(Text.translatable("gui.clear"), b -> {
             KeyBinding selectedBinding = this.getSelectedKeyBinding();
             if (selectedBinding == null) return;
-            ((IKeyBinding) selectedBinding).setKeyModifierAndCode(KeyModifier.NONE, InputUtil.Type.KEYSYM.createFromCode(GLFW.GLFW_KEY_UNKNOWN));
+//            ((IKeyBinding) selectedBinding).setKeyModifierAndCode(KeyModifier.NONE, InputUtil.Type.KEYSYM.createFromCode(GLFW.GLFW_KEY_UNKNOWN));
             KeyBinding.updateKeysByCode();
         }).dimensions(bindingListWidth + 66, this.height - 23, 50, 20).build();
         this.resetAll = ButtonWidget.builder(Text.translatable("controls.resetAll"), b -> {
             final Screen current = client.currentScreen;
             client.setScreen(new ResetAllConfirmScreen(y -> {
                 if (y) {
-                    for (KeyBinding k : this.gameOptions.allKeys) ((IKeyBinding) k).setToDefault();
+//                    for (KeyBinding k : this.gameOptions.allKeys) ((IKeyBinding) k).setToDefault();
                     KeyBinding.updateKeysByCode();
                 }
                 client.setScreen(current);

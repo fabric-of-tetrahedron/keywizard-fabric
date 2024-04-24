@@ -1,7 +1,7 @@
 package committee.nova.mkw.gui;
 
-import committee.nova.mkb.api.IKeyBinding;
-import committee.nova.mkb.keybinding.KeyModifier;
+//import committee.nova.mkb.api.IKeyBinding;
+//import committee.nova.mkb.keybinding.KeyModifier;
 import committee.nova.mkw.mixin.AccessorKeyBinding;
 import committee.nova.mkw.util.KeyBindingUtil;
 import net.minecraft.client.MinecraftClient;
@@ -125,14 +125,14 @@ public class KeyBindingListWidget extends FreeFormListWidget<KeyBindingListWidge
                 return Arrays.stream(bindings).filter(b -> bindingCounts.get(((AccessorKeyBinding) b).getBoundKey()) > 1 && ((AccessorKeyBinding) b).getBoundKey().getCode() != -1).toArray(KeyBinding[]::new);
             case KeyBindingUtil.DYNAMIC_CATEGORY_UNBOUND:
                 return Arrays.stream(bindings).filter(KeyBinding::isUnbound).toArray(KeyBinding[]::new);
-            case KeyBindingUtil.DYNAMIC_CATEGORY_CTRL:
-                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.CONTROL)).toArray(KeyBinding[]::new);
-            case KeyBindingUtil.DYNAMIC_CATEGORY_ALT:
-                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.ALT)).toArray(KeyBinding[]::new);
-            case KeyBindingUtil.DYNAMIC_CATEGORY_SHIFT:
-                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.SHIFT)).toArray(KeyBinding[]::new);
-            case KeyBindingUtil.DYNAMIC_CATEGORY_NONE:
-                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.NONE)).toArray(KeyBinding[]::new);
+//            case KeyBindingUtil.DYNAMIC_CATEGORY_CTRL:
+//                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.CONTROL)).toArray(KeyBinding[]::new);
+//            case KeyBindingUtil.DYNAMIC_CATEGORY_ALT:
+//                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.ALT)).toArray(KeyBinding[]::new);
+//            case KeyBindingUtil.DYNAMIC_CATEGORY_SHIFT:
+//                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.SHIFT)).toArray(KeyBinding[]::new);
+//            case KeyBindingUtil.DYNAMIC_CATEGORY_NONE:
+//                return Arrays.stream(bindings).filter(k -> ((IKeyBinding) k).getKeyModifier().equals(KeyModifier.NONE)).toArray(KeyBinding[]::new);
             default:
                 return Arrays.stream(bindings).filter(b -> b.getCategory().equals(category)).toArray(KeyBinding[]::new);
         }

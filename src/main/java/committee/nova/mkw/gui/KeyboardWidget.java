@@ -1,8 +1,8 @@
 package committee.nova.mkw.gui;
 
-import committee.nova.mkb.ModernKeyBinding;
-import committee.nova.mkb.api.IKeyBinding;
-import committee.nova.mkb.keybinding.KeyModifier;
+//import committee.nova.mkb.ModernKeyBinding;
+//import committee.nova.mkb.api.IKeyBinding;
+//import committee.nova.mkb.keybinding.KeyModifier;
 import committee.nova.mkw.mixin.AccessorKeyBinding;
 import committee.nova.mkw.util.DrawingUtil;
 import net.minecraft.client.MinecraftClient;
@@ -126,7 +126,7 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
             if (this.active) {
                 if (this.isHovered() && !keyWizardScreen.getCategorySelectorExtended()) {
                     color = 0xFFAAAAAA;
-                    if (bindingCount >= 1 && ModernKeyBinding.nonConflictKeys()) {
+                    if (bindingCount >= 1) {
                         color = 0xFF00AA00;
                     } else if (bindingCount == 1) {
                         color = 0xFF00AA00;
@@ -135,7 +135,7 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
                     }
                 } else {
                     color = 0xFFFFFFFF;
-                    if (bindingCount >= 1 && ModernKeyBinding.nonConflictKeys()) {
+                    if (bindingCount >= 1) {
                         color = 0xFF00FF00;
                     } else if (bindingCount == 1) {
                         color = 0xFF00FF00;
@@ -175,7 +175,7 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
             } else {
                 KeyBinding selectedKeyBinding = keyWizardScreen.getSelectedKeyBinding();
                 if (selectedKeyBinding != null) {
-                    ((IKeyBinding) selectedKeyBinding).setKeyModifierAndCode(KeyModifier.getActiveModifier(), this.key);
+//                    ((IKeyBinding) selectedKeyBinding).setKeyModifierAndCode(KeyModifier.getActiveModifier(), this.key);
                     KeyBinding.updateKeysByCode();
                 }
             }

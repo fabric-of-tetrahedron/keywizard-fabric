@@ -71,7 +71,7 @@ public class CategorySelectorWidget extends PressableWidget implements TickableE
         return this.categoryList;
     }
 
-    private static class BindingCategoryListWidget extends FreeFormListWidget<BindingCategoryListWidget.CategoryEntry> {
+    public static class BindingCategoryListWidget extends FreeFormListWidget<BindingCategoryListWidget.CategoryEntry> {
 
         public BindingCategoryListWidget(MinecraftClient client, int top, int left, int width, int height, int itemHeight) {
             super(client, top, left, width, height, itemHeight);

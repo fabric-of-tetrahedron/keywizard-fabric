@@ -77,6 +77,7 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
             if (w > maxCategoryWidth)
                 maxCategoryWidth = w;
         }
+        maxCategoryWidth=Math.min(width/2,maxCategoryWidth);
 
         int bindingListWidth = Math.min(width/3,maxBindingNameWidth + 20);
         this.bindingList = new KeyBindingListWidget(this, 10, 10, bindingListWidth, this.height - 40, this.textRenderer.fontHeight * 3 + 10);
@@ -133,7 +134,6 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
         this.addDrawableChild(this.bindingList);
         this.addDrawableChild(this.keyboard);
         this.addDrawableChild(this.categorySelector);
-        this.addDrawableChild(this.categorySelector.getCategoryList());
         this.addDrawableChild(this.screenToggleButton);
         this.addDrawableChild(this.searchBar);
         this.addDrawableChild(this.mouseButton);
@@ -142,6 +142,8 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
         this.addDrawableChild(this.resetBinding);
         this.addDrawableChild(this.clearBinding);
         this.addDrawableChild(this.resetAll);
+
+        this.addDrawableChild(this.categorySelector.getCategoryList());
     }
 
     @Override

@@ -24,11 +24,6 @@ public class ModernKeyWizard implements ClientModInitializer {
     public void onInitializeClient() {
         LOGGER.debug("{} initializing!", MODID);
 
-//        if (hasMod("cloth-config") && hasMod("modmenu")) {
-//            AutoConfig.register(KeyWizardScreen.class, GsonConfigSerializer::new);
-////            KeyWizardScreen.INSTANCE = AutoConfig.getConfigHolder(KeyWizardScreen.class).getConfig();
-//        }
-
         keyOpenKeyWizard = KeyBindingHelper.registerKeyBinding(new KeyBinding("key." + MODID + ".openKeyWizard", InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_F7, "key.categories." + MODID + ".bindings"));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (keyOpenKeyWizard.wasPressed()) {

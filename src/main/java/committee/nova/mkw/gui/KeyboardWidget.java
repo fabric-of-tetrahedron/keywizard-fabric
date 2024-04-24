@@ -143,12 +143,11 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
                 color = 0xFF555555;
             }
             DrawingUtil.drawNoFillRect(ctx.getMatrices(), this.x, this.y, this.x + this.width, this.y + this.height, color);
-            @SuppressWarnings("resource")
             TextRenderer textRenderer = MinecraftClient.getInstance().textRenderer;
             //textRenderer.drawWithShadow(ctx, this.getMessage(),
             //        (this.x + (this.width) / 2 - textRenderer.getWidth(this.getMessage()) / 2.0F),
             //        this.y + (this.height - 6) / 2, color);
-            ctx.drawTextWithShadow(textRenderer, getMessage(), (int) (this.x + (this.width) / 2 - textRenderer.getWidth(this.getMessage()) / 2.0F - 1), (int) (this.y + (this.height - 6) / 2), color);
+            ctx.drawTextWithShadow(textRenderer, getMessage(), (int) (this.x + (this.width) / 2 - textRenderer.getWidth(this.getMessage()) / 2.0F + 1), (int) (this.y + (this.height - 6) / 2), color);
         }
 
         @Override

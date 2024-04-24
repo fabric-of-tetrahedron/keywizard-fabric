@@ -32,7 +32,7 @@ public class KeyBindingUtil {
     public static ArrayList<String> getCategoriesWithDynamics() {
         ArrayList<String> categories = getCategories();
         categories.add(0, DYNAMIC_CATEGORY_UNBOUND);
-//        if (!ModernKeyBinding.nonConflictKeys()) categories.add(0, DYNAMIC_CATEGORY_CONFLICTS);
+        categories.add(0, DYNAMIC_CATEGORY_CONFLICTS);
         categories.add(0, DYNAMIC_CATEGORY_ALL);
         categories.add(DYNAMIC_CATEGORY_CTRL);
         categories.add(DYNAMIC_CATEGORY_ALT);

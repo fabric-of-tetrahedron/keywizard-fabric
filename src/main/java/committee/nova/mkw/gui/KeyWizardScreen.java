@@ -18,7 +18,9 @@ import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.TexturedButtonWidget;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableTextContent;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.glfw.GLFW;
 
@@ -104,12 +106,14 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
         this.resetBinding = ButtonWidget.builder(Text.translatable("controls.reset"), b -> {
             KeyBinding selectedBinding = this.getSelectedKeyBinding();
             if (selectedBinding == null) return;
+            selectedBinding.setBoundKey(selectedBinding.getDefaultKey());
 //            ((IKeyBinding) selectedBinding).setToDefault();
             KeyBinding.updateKeysByCode();
         }).dimensions(bindingListWidth + 15, this.height - 23, 50, 20).build();
         this.clearBinding = ButtonWidget.builder(Text.translatable("gui.clear"), b -> {
             KeyBinding selectedBinding = this.getSelectedKeyBinding();
             if (selectedBinding == null) return;
+            selectedBinding.setBoundKey(InputUtil.Type.KEYSYM.createFromCode(GLFW.GLFW_KEY_UNKNOWN));
 //            ((IKeyBinding) selectedBinding).setKeyModifierAndCode(KeyModifier.NONE, InputUtil.Type.KEYSYM.createFromCode(GLFW.GLFW_KEY_UNKNOWN));
             KeyBinding.updateKeysByCode();
         }).dimensions(bindingListWidth + 66, this.height - 23, 50, 20).build();
@@ -118,6 +122,9 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
             client.setScreen(new ResetAllConfirmScreen(y -> {
                 if (y) {
 //                    for (KeyBinding k : this.gameOptions.allKeys) ((IKeyBinding) k).setToDefault();
+                    for(KeyBinding k : this.gameOptions.allKeys) {
+                        k.setBoundKey(k.getDefaultKey());
+                    }
                     KeyBinding.updateKeysByCode();
                 }
                 client.setScreen(current);

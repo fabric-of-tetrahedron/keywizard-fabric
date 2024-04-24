@@ -3,7 +3,7 @@
   "id": "mkw",
   "version": "${version}",
   "name": "Modern Keyboard Wizard",
-  "description": "Keyboard Wizard is simple that makes finding and fixing key bind conflicts a lot easier",
+  "description": "Keyboard Wizard is a simple mod that makes finding and fixing key bind conflicts a lot easier",
   "authors": [
     "MrNerdy42",
     "Tapio",

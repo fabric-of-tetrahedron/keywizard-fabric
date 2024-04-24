@@ -126,18 +126,14 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
             if (this.active) {
                 if (this.isHovered() && !keyWizardScreen.getCategorySelectorExtended()) {
                     color = 0xFFAAAAAA;
-                    if (bindingCount >= 1) {
-                        color = 0xFF00AA00;
-                    } else if (bindingCount == 1) {
+                    if (bindingCount == 1) {
                         color = 0xFF00AA00;
                     } else if (bindingCount > 1) {
                         color = 0xFFAA0000;
                     }
                 } else {
                     color = 0xFFFFFFFF;
-                    if (bindingCount >= 1) {
-                        color = 0xFF00FF00;
-                    } else if (bindingCount == 1) {
+                    if (bindingCount == 1) {
                         color = 0xFF00FF00;
                     } else if (bindingCount > 1) {
                         color = 0xFFFF0000;
@@ -175,7 +171,7 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
             } else {
                 KeyBinding selectedKeyBinding = keyWizardScreen.getSelectedKeyBinding();
                 if (selectedKeyBinding != null) {
-//                    ((IKeyBinding) selectedKeyBinding).setKeyModifierAndCode(KeyModifier.getActiveModifier(), this.key);
+                    selectedKeyBinding.setBoundKey(this.key);
                     KeyBinding.updateKeysByCode();
                 }
             }

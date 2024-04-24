@@ -6,16 +6,20 @@
   "description": "Keyboard Wizard is simple that makes finding and fixing key bind conflicts a lot easier",
   "authors": [
     "MrNerdy42",
-    "Tapio"
+    "Tapio",
+    "pama1234"
   ],
   "contact": {
     "sources": "https://github.com/MikhailTapio/ModernKeyWizard"
   },
   "license": "AGPL-3.0-only",
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "client": [
       "committee.nova.mkw.ModernKeyWizard"
+    ],
+    "modmenu": [
+      "committee.nova.mkw.gui.KeyWizardScreen"
     ]
   },
   "mixins": [
@@ -27,6 +31,7 @@
     "minecraft": "1.20.x"
   },
   "suggests": {
+    "modmenu": "*",
     "another-mod": "*"
   }
 }

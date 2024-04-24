@@ -2,6 +2,9 @@ package committee.nova.mkw.gui;
 
 //import committee.nova.mkb.api.IKeyBinding;
 //import committee.nova.mkb.keybinding.KeyModifier;
+
+import com.terraformersmc.modmenu.api.ConfigScreenFactory;
+import com.terraformersmc.modmenu.api.ModMenuApi;
 import committee.nova.mkw.ModernKeyWizard;
 import committee.nova.mkw.util.KeyBindingUtil;
 import net.minecraft.client.MinecraftClient;
@@ -19,7 +22,8 @@ import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.glfw.GLFW;
 
-public class KeyWizardScreen extends GameOptionsScreen {
+//@Config(name = ModernKeyWizard.MODID)
+public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
 
     private final int[] mouseCodes = {GLFW.GLFW_MOUSE_BUTTON_1, GLFW.GLFW_MOUSE_BUTTON_2, GLFW.GLFW_MOUSE_BUTTON_3, GLFW.GLFW_MOUSE_BUTTON_4, GLFW.GLFW_MOUSE_BUTTON_5, GLFW.GLFW_MOUSE_BUTTON_6, GLFW.GLFW_MOUSE_BUTTON_7, GLFW.GLFW_MOUSE_BUTTON_8};
     private int mouseCodeIndex = 0;
@@ -35,6 +39,15 @@ public class KeyWizardScreen extends GameOptionsScreen {
     private ButtonWidget resetBinding;
     private ButtonWidget resetAll;
     private ButtonWidget clearBinding;
+
+    public KeyWizardScreen() {
+        this(null);
+    }
+
+    @Override
+    public ConfigScreenFactory<?> getModConfigScreenFactory() {
+        return KeyWizardScreen::new;
+    }
 
     @SuppressWarnings("resource")
     public KeyWizardScreen(Screen parent) {
@@ -63,7 +76,7 @@ public class KeyWizardScreen extends GameOptionsScreen {
                 maxCategoryWidth = w;
         }
 
-        int bindingListWidth = (maxBindingNameWidth + 20);
+        int bindingListWidth = Math.min(width/3,maxBindingNameWidth + 20);
         this.bindingList = new KeyBindingListWidget(this, 10, 10, bindingListWidth, this.height - 40, this.textRenderer.fontHeight * 3 + 10);
         this.keyboard = KeyboardWidgetBuilder.standardKeyboard(this, bindingListWidth + 15, this.height / 2.0F - 90.0F, this.width - (bindingListWidth + 15), 180);
         this.categorySelector = new CategorySelectorWidget(this, bindingListWidth + 15, 5, maxCategoryWidth + 20, 20);

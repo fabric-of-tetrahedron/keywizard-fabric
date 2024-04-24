@@ -10,8 +10,8 @@
   "gui.clear": "清除",
   "gui.confirm.resetAll": "确认重置全部按键绑定？",
   "key.mkw.openKeyWizard": "打开按键精灵",
-  "key.mouse.4": "Mouse4",
-  "key.mouse.5": "Mouse5",
+  "key.mouse.4": "前键",
+  "key.mouse.5": "后键",
   "key.mouse.6": "Mouse6",
   "key.mouse.7": "Mouse7",
   "key.mouse.8": "Mouse8"

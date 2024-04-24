@@ -148,7 +148,7 @@ public class KeyboardWidget extends AbstractParentElement implements Drawable, T
             //textRenderer.drawWithShadow(ctx, this.getMessage(),
             //        (this.x + (this.width) / 2 - textRenderer.getWidth(this.getMessage()) / 2.0F),
             //        this.y + (this.height - 6) / 2, color);
-            ctx.drawTextWithShadow(textRenderer, getMessage(), (int) (this.x + (this.width) / 2 - textRenderer.getWidth(this.getMessage()) / 2.0F), (int) (this.y + (this.height - 6) / 2), color);
+            ctx.drawTextWithShadow(textRenderer, getMessage(), (int) (this.x + (this.width) / 2 - textRenderer.getWidth(this.getMessage()) / 2.0F - 1), (int) (this.y + (this.height - 6) / 2), color);
         }
 
         @Override

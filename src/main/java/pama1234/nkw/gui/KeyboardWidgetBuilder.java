@@ -1,4 +1,4 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;

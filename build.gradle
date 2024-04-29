@@ -106,7 +106,7 @@ java {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId = 'mkw-1.20.1'
+            artifactId = 'nkw-1.20.1'
             from components.java
         }
     }

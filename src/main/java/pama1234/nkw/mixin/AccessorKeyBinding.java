@@ -1,4 +1,4 @@
-package committee.nova.mkw.mixin;
+package pama1234.nkw.mixin;
 
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;

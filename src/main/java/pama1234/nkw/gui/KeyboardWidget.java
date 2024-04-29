@@ -1,10 +1,10 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
 //import committee.nova.mkb.ModernKeyBinding;
 //import committee.nova.mkb.api.IKeyBinding;
 //import committee.nova.mkb.keybinding.KeyModifier;
-import committee.nova.mkw.mixin.AccessorKeyBinding;
-import committee.nova.mkw.util.DrawingUtil;
+import pama1234.nkw.mixin.AccessorKeyBinding;
+import pama1234.nkw.util.DrawingUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.AbstractParentElement;

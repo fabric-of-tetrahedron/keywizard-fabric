@@ -1,7 +1,5 @@
-package committee.nova.mkw.mixin;
+package pama1234.nkw.mixin;
 
-import committee.nova.mkw.ModernKeyWizard;
-import committee.nova.mkw.gui.KeyWizardScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.ControlsOptionsScreen;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
@@ -12,6 +10,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import pama1234.nkw.NeoKeyWizard;
+import pama1234.nkw.gui.KeyWizardScreen;
+import pama1234.nkw.util.TexturedButton;
 
 @Mixin(ControlsOptionsScreen.class)
 public abstract class MixinControlsOptionsScreen extends GameOptionsScreen {
@@ -21,11 +22,11 @@ public abstract class MixinControlsOptionsScreen extends GameOptionsScreen {
 
     @Inject(at = @At("TAIL"), method = "init()V")
     private void init(CallbackInfo info) {
-        ModernKeyWizard.LOGGER.debug("Controls screen injector mixin loaded!");
-        TexturedButtonWidget screenToggleButton = new TexturedButtonWidget(this.width - 22, this.height - 22, 20, 20, 0, 0, 20, ModernKeyWizard.SCREEN_TOGGLE_WIDGETS, 40, 40, (btn) -> {
+        NeoKeyWizard.LOGGER.debug("Controls screen injector mixin loaded!");
+        TexturedButtonWidget screenToggleButton = new TexturedButton(this.width - 22, this.height - 22, 20, 20, 0, 0, 20, NeoKeyWizard.SCREEN_TOGGLE_WIDGETS, 40, 40, (btn) -> {
             if (client == null) return;
             client.setScreen(new KeyWizardScreen(this.parent));
-        });
+        }, Text.of(""));
         this.addDrawableChild(screenToggleButton);
     }
 

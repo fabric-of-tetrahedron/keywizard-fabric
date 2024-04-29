@@ -1,9 +1,9 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
 //import committee.nova.mkb.api.IKeyBinding;
 //import committee.nova.mkb.keybinding.KeyModifier;
-import committee.nova.mkw.mixin.AccessorKeyBinding;
-import committee.nova.mkw.util.KeyBindingUtil;
+import pama1234.nkw.mixin.AccessorKeyBinding;
+import pama1234.nkw.util.KeyBindingUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;

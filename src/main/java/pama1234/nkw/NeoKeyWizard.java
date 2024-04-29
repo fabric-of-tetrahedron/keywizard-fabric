@@ -1,6 +1,6 @@
-package committee.nova.mkw;
+package pama1234.nkw;
 
-import committee.nova.mkw.gui.KeyWizardScreen;
+import pama1234.nkw.gui.KeyWizardScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -13,8 +13,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
 
-public class ModernKeyWizard implements ClientModInitializer {
-    public static final String MODID = "mkw";
+public class NeoKeyWizard implements ClientModInitializer {
+    public static final String MODID = "nkw";
     public static final Logger LOGGER = LogManager.getLogger(MODID);
     public static final Identifier SCREEN_TOGGLE_WIDGETS = new Identifier(MODID, "textures/gui/screen_toggle_widgets.png");
 

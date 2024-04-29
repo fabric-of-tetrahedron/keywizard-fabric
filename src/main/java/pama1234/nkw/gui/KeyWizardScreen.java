@@ -1,12 +1,10 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
 //import committee.nova.mkb.api.IKeyBinding;
 //import committee.nova.mkb.keybinding.KeyModifier;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
-import committee.nova.mkw.ModernKeyWizard;
-import committee.nova.mkw.util.KeyBindingUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.Element;
@@ -18,11 +16,12 @@ import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.TexturedButtonWidget;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableTextContent;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.glfw.GLFW;
+import pama1234.nkw.NeoKeyWizard;
+import pama1234.nkw.util.KeyBindingUtil;
+import pama1234.nkw.util.TexturedButton;
 
 //@Config(name = ModernKeyWizard.MODID)
 public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
@@ -53,7 +52,7 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
 
     @SuppressWarnings("resource")
     public KeyWizardScreen(Screen parent) {
-        super(parent, MinecraftClient.getInstance().options, Text.of(ModernKeyWizard.MODID));
+        super(parent, MinecraftClient.getInstance().options, Text.of(NeoKeyWizard.MODID));
     }
 
     @Override
@@ -77,13 +76,15 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
             if (w > maxCategoryWidth)
                 maxCategoryWidth = w;
         }
-        maxCategoryWidth=Math.min(width/2,maxCategoryWidth);
+        maxCategoryWidth = Math.min(width / 2, maxCategoryWidth);
 
-        int bindingListWidth = Math.min(width/3,maxBindingNameWidth + 20);
+        int bindingListWidth = Math.min(width / 3, maxBindingNameWidth + 20);
         this.bindingList = new KeyBindingListWidget(this, 10, 10, bindingListWidth, this.height - 40, this.textRenderer.fontHeight * 3 + 10);
         this.keyboard = KeyboardWidgetBuilder.standardKeyboard(this, bindingListWidth + 15, this.height / 2.0F - 90.0F, this.width - (bindingListWidth + 15), 160);
         this.categorySelector = new CategorySelectorWidget(this, bindingListWidth + 15, 5, maxCategoryWidth + 30, 20);
-        this.screenToggleButton = new TexturedButtonWidget(this.width - 22, this.height - 22, 20, 20, 20, 0, 20, ModernKeyWizard.SCREEN_TOGGLE_WIDGETS, 40, 40, (btn) -> this.client.setScreen(new ControlsOptionsScreen(this.parent, this.gameOptions)));
+        this.screenToggleButton = new TexturedButton(
+                this.width - 22, this.height - 22, 20, 20, 20, 0, 20, NeoKeyWizard.SCREEN_TOGGLE_WIDGETS,
+                40, 40, (btn) -> this.client.setScreen(new ControlsOptionsScreen(this.parent, this.gameOptions)), Text.of(""));
         this.searchBar = new TextFieldWidget(this.textRenderer, 10, this.height - 20, bindingListWidth, 14, Text.of(""));
         this.mouseButton = KeyboardWidgetBuilder.singleKeyKeyboard(this, mouseButtonX, mouseButtonY, mouseButtonWidth, mouseButtonHeight, mouseCodes[mouseCodeIndex], InputUtil.Type.MOUSE);
         this.mousePlus = ButtonWidget.builder(Text.of("+"), b -> {
@@ -123,7 +124,7 @@ public class KeyWizardScreen extends GameOptionsScreen implements ModMenuApi {
             client.setScreen(new ResetAllConfirmScreen(y -> {
                 if (y) {
 //                    for (KeyBinding k : this.gameOptions.allKeys) ((IKeyBinding) k).setToDefault();
-                    for(KeyBinding k : this.gameOptions.allKeys) {
+                    for (KeyBinding k : this.gameOptions.allKeys) {
                         k.setBoundKey(k.getDefaultKey());
                     }
                     KeyBinding.updateKeysByCode();

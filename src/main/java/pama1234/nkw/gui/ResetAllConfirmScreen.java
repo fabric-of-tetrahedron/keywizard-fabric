@@ -1,4 +1,4 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.screen.ConfirmScreen;

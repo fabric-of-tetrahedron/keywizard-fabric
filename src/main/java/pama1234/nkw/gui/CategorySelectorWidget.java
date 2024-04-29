@@ -1,6 +1,6 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
-import committee.nova.mkw.util.KeyBindingUtil;
+import pama1234.nkw.util.KeyBindingUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.narration.NarrationMessageBuilder;

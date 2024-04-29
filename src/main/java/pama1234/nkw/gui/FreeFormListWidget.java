@@ -1,7 +1,7 @@
-package committee.nova.mkw.gui;
+package pama1234.nkw.gui;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import committee.nova.mkw.util.DrawingUtil;
+import pama1234.nkw.util.DrawingUtil;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.EntryListWidget;

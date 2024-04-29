@@ -1,4 +1,4 @@
-package committee.nova.mkw.util;
+package pama1234.nkw.util;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.render.*;

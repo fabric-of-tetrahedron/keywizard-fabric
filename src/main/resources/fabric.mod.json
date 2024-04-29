@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "mkw",
+  "id": "nkw",
   "version": "${version}",
-  "name": "Modern Keyboard Wizard",
-  "description": "Keyboard Wizard is a simple mod that makes finding and fixing key bind conflicts a lot easier",
+  "name": "Neo Keyboard Wizard",
+  "description": "Neo Keyboard Wizard is a simple mod that makes finding and fixing key bind conflicts a lot easier",
   "authors": [
     "MrNerdy42",
     "Tapio",
     "pama1234"
   ],
   "contact": {
-    "sources": "https://github.com/MikhailTapio/ModernKeyWizard"
+    "sources": "https://github.com/fabric-of-tetrahedron/keywizard-fabric"
   },
   "license": "AGPL-3.0-only",
   "environment": "client",
   "entrypoints": {
     "client": [
-      "committee.nova.mkw.ModernKeyWizard"
+      "pama1234.nkw.NeoKeyWizard"
     ],
     "modmenu": [
-      "committee.nova.mkw.gui.KeyWizardScreen"
+      "pama1234.nkw.gui.KeyWizardScreen"
     ]
   },
   "mixins": [
-    "mkw.mixins.json"
+    "nkw.mixins.json"
   ],
   "depends": {
     "fabricloader": "*",

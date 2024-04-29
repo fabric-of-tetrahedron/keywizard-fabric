@@ -1,7 +1,7 @@
-package committee.nova.mkw.util;
+package pama1234.nkw.util;
 
 //import committee.nova.mkb.ModernKeyBinding;
-import committee.nova.mkw.mixin.AccessorKeyBinding;
+import pama1234.nkw.mixin.AccessorKeyBinding;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -14,13 +14,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class KeyBindingUtil {
-    public static final String DYNAMIC_CATEGORY_ALL = "key.categories.mkw.all";
-    public static final String DYNAMIC_CATEGORY_CONFLICTS = "key.categories.mkw.conflicts";
-    public static final String DYNAMIC_CATEGORY_UNBOUND = "key.categories.mkw.unbound";
-    public static final String DYNAMIC_CATEGORY_CTRL = "key.categories.mkw.ctrl";
-    public static final String DYNAMIC_CATEGORY_ALT = "key.categories.mkw.alt";
-    public static final String DYNAMIC_CATEGORY_SHIFT = "key.categories.mkw.shift";
-    public static final String DYNAMIC_CATEGORY_NONE = "key.categories.mkw.no_modifier";
+    public static final String DYNAMIC_CATEGORY_ALL = "key.categories.nkw.all";
+    public static final String DYNAMIC_CATEGORY_CONFLICTS = "key.categories.nkw.conflicts";
+    public static final String DYNAMIC_CATEGORY_UNBOUND = "key.categories.nkw.unbound";
+    public static final String DYNAMIC_CATEGORY_CTRL = "key.categories.nkw.ctrl";
+    public static final String DYNAMIC_CATEGORY_ALT = "key.categories.nkw.alt";
+    public static final String DYNAMIC_CATEGORY_SHIFT = "key.categories.nkw.shift";
+    public static final String DYNAMIC_CATEGORY_NONE = "key.categories.nkw.no_modifier";
 
     /**
      * Get a list of all binding categories
